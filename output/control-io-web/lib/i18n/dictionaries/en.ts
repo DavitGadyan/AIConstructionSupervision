@@ -142,6 +142,28 @@ export const en = {
 
   home: {
     definitionTitle: "What is control.io?",
+    /** "From drone flight to 3D model" explainer (#from-flight). */
+    flightTo3d: {
+      eyebrow: "How the 3D model is made",
+      titleLine1: "From drone flight",
+      titleLine2: "to 3D model",
+      intro: "Everything you see in the 3D model comes from one drone flight. Scroll to follow a real sample flight, from the photos to the measured storeys.",
+      imageAlt: "A survey drone scanning the facade of a concrete tower under construction",
+      canvasLabel: "Animated explainer: drone flight, photos, point cloud and 3D model of the sample tower",
+      steps: [
+        { title: "1 · Fly", text: "A pilot flies an automated route around the building: orbits, a facade pass and a top-down pass. Each stop is a geo-tagged, time-stamped photo." },
+        { title: "2 · Match", text: "Software finds the same points in overlapping photos and triangulates them into a point cloud, storey by storey." },
+        { title: "3 · Reconstruct", text: "The points become a surface, and the drone photos are projected back onto it. That is the photo-real 3D model." },
+        { title: "4 · Measure", text: "Slabs are measured in the model and compared with the schedule: 12 of 16 storeys built, 28 days behind." },
+      ],
+      shots: "6 drone photos from the September flight",
+      watch: "Watch the flight",
+      videoTitle: "Drone flight around the sample tower",
+      close: "Close video",
+      explore: "Explore the model",
+      measureBuilt: "Built: 12 of 16 storeys",
+      measurePlanned: "Plan: 14 storeys · 28 days behind",
+    },
     /** "Order an inspection from your phone" section (#order-from-phone). */
     orderApp: {
       eyebrow: "On-demand inspections",

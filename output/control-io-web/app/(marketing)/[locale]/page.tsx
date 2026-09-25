@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/marketing/Container";
 import { FaqTable } from "@/components/marketing/FaqTable";
+import { FromFlightTo3D } from "@/components/marketing/FromFlightTo3D";
 import { DefectExplorer } from "@/components/marketing/DefectExplorer";
 import { Hero } from "@/components/marketing/Hero";
 import { inspectionServiceLd, OrderFromPhone } from "@/components/marketing/OrderFromPhone";
@@ -51,6 +52,7 @@ export default async function HomePage({ params }: { params: LocaleParams }) {
   return (
     <>
       <Hero locale={locale} />
+      <FromFlightTo3D locale={locale} />
       <DefectExplorer locale={locale} t={t.explorer} />
 
       {/* Definition block: the entity statement, answer-first, for people and machines. */}

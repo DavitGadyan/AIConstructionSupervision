@@ -7,6 +7,7 @@ import { getHome } from "@/lib/content/home";
 import { fmt, getDictionary, localizePath, type Locale } from "@/lib/i18n";
 import { HeroCarousel } from "./HeroCarousel";
 import { HeroTower } from "./HeroTower";
+import { VideoDialogTrigger } from "./VideoDialog";
 import { Icon } from "./icons";
 import { SIGN_IN_HREF } from "@/lib/siteMode";
 
@@ -64,98 +65,101 @@ export function Hero({ locale }: { locale: Locale }) {
           </span>
         </h1>
 
-        {/* 3 · Centre object */}
-        <HeroTower label={t.towerLabel} exploreLabel={t.exploreModel} className="pointer-events-none relative z-20 -mt-[8cqw] aspect-square w-[130%] -mx-[15%] max-w-none md:mx-auto md:w-full md:max-w-[640px] xl:absolute xl:left-[26%] xl:top-[3%] xl:mt-0 xl:aspect-auto xl:h-[98%] xl:w-[48%] xl:max-w-none" />
+        {/* 3 · Centre object: its own centre column on desktop; nothing overlaps the building */}
+        <HeroTower label={t.towerLabel} exploreLabel={t.exploreModel} className="pointer-events-none relative z-20 mx-auto mt-3 aspect-[4/5] w-full max-w-[520px] md:aspect-square md:max-w-[640px] xl:absolute xl:left-[28%] xl:top-[13%] xl:mt-0 xl:aspect-auto xl:h-[87%] xl:w-[44%] xl:max-w-none" />
 
         <div className="relative z-30 grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-2 xl:contents">
-          {/* 4 · How it works card */}
-          <Link
-            href={localizePath("/#how-it-works", locale)}
-            className="group glass flex w-full min-w-0 max-w-full items-center gap-4 p-2 pr-5 transition hover:-translate-y-0.5 xl:absolute xl:left-[2%] xl:top-[27.5%] xl:z-30 xl:w-[21.5%] xl:min-w-[290px]"
-          >
-            <span className="relative block h-[104px] w-[104px] shrink-0 overflow-hidden rounded-[20px] bg-accent-soft">
-              <Image
-                src="/images/marketing/hero-howitworks.webp"
-                alt={t.howItWorksAlt}
-                width={208}
-                height={208}
-                sizes="104px"
-                className="size-full object-cover transition duration-500 group-hover:scale-105"
-              />
-              <span className="absolute inset-0 grid place-items-center">
-                <span className="grid size-10 place-items-center rounded-full bg-white/80 text-ink backdrop-blur-sm">
-                  <Icon name="play" className="ml-0.5 size-4" />
-                </span>
-              </span>
-            </span>
-            <span>
-              <span className="block font-display text-[20px] font-bold leading-tight">{t.howItWorks}</span>
-              <span className="mt-1.5 block text-[15px] leading-snug text-ink/80">{t.howItWorksText}</span>
-            </span>
-          </Link>
-
-          {/* 5 · Glass rows tray */}
-          <div className="glass grid gap-2 rounded-[24px] p-3 xl:absolute xl:left-[14.8%] xl:top-[46%] xl:z-30 xl:w-[28%] xl:min-w-[360px]">
-            <p className="sr-only">{t.findingsSr}</p>
-            {rows.map((r) => (
-              <div key={r.name} className="inner grid grid-cols-[1fr_auto_1fr_auto] items-center gap-3 rounded-[12px] px-3 py-2.5 text-[14px]">
-                <span className="truncate">{r.name}</span>
-                <Pill tone={r.tone}>{r.sev}</Pill>
-                <span className="truncate text-ink/80">{r.trade}</span>
-                <span className="tabular font-medium">{r.delta}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* 6 · Today's flights */}
-          <div className="glass relative p-4 md:col-span-2 xl:absolute xl:left-[54%] xl:top-[51.5%] xl:z-30 xl:w-[25.6%] xl:min-w-[330px] xl:overflow-visible">
-            <div className="mb-4 flex items-start justify-between gap-3">
-              <div>
-                <h2 className="font-display text-[22px] font-bold leading-tight">{t.todaysFlights}</h2>
-                <p className="text-[14px] text-ink/70">{t.droneSchedule}</p>
-              </div>
-              <Link
-                href={SIGN_IN_HREF ?? localizePath("/contact", locale)}
-                aria-label={t.openFlights}
-                className="grid size-11 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-surface shadow-[var(--shadow-inner)] transition hover:-translate-y-0.5"
+          {/* Left column (desktop): how-it-works + findings at the top, lead copy + carousel at the bottom.
+              A flex column rather than fixed offsets, so longer hy/ru text pushes, never overlaps. */}
+          <div className="contents xl:absolute xl:bottom-[3%] xl:left-[2%] xl:top-[29%] xl:z-30 xl:flex xl:w-[max(24%,300px)] xl:flex-col xl:justify-between xl:gap-4">
+            <div className="contents xl:flex xl:flex-col xl:gap-3">
+              {/* 4 · How it works: opens the drone flight video */}
+              <VideoDialogTrigger
+                href={localizePath("/#how-it-works", locale)}
+                labels={{ title: d.home.flightTo3d.videoTitle, close: d.home.flightTo3d.close }}
+                className="group glass flex w-full min-w-0 max-w-full items-center gap-4 p-2 pr-5 transition hover:-translate-y-0.5"
               >
-                <svg viewBox="0 0 16 16" fill="none" className="size-4" aria-hidden>
-                  <path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
+                <span className="relative block size-[88px] shrink-0 overflow-hidden rounded-[18px] bg-accent-soft">
+                  <Image
+                    src="/images/marketing/drone-scan.webp"
+                    alt={t.howItWorksAlt}
+                    width={176}
+                    height={176}
+                    sizes="88px"
+                    className="size-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 grid place-items-center">
+                    <span className="grid size-9 place-items-center rounded-full bg-white/85 text-ink backdrop-blur-sm">
+                      <Icon name="play" className="ml-0.5 size-4" />
+                    </span>
+                  </span>
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-display text-[18px] font-bold leading-tight">{t.howItWorks}</span>
+                  <span className="mt-1 block text-[14px] leading-snug text-ink/75">{t.howItWorksText}</span>
+                </span>
+              </VideoDialogTrigger>
+
+              {/* 5 · Findings: one tidy line per storey */}
+              <div className="glass grid gap-1.5 rounded-[20px] p-2.5">
+                <p className="sr-only">{t.findingsSr}</p>
+                {rows.map((r) => (
+                  <div key={r.name} className="inner flex items-center gap-2.5 rounded-[12px] px-3 py-2 text-[14px]">
+                    <span className="min-w-0 flex-1 truncate">
+                      {r.name} <span className="text-ink/60">· {r.trade}</span>
+                    </span>
+                    <Pill tone={r.tone}>{r.sev}</Pill>
+                    <span className="tabular whitespace-nowrap text-right font-semibold">{r.delta}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:w-[136%]">
-              {flights.map((f) => (
-                <li key={f.site} className="inner flex min-h-[150px] flex-col p-4">
-                  <p className="tabular text-[13px] text-muted">
-                    {f.date}
-                    <span className="ml-3">{f.time}</span>
-                  </p>
-                  <p className="mt-2 font-medium">{f.site}</p>
-                  <p className="text-[14px] text-ink/80">{t.shots}</p>
-                  <p className="mt-auto flex items-center justify-between pt-4 text-[13px] text-muted">
-                    {f.status}
-                    <span className={`size-3 rounded-full ${f.dot}`} aria-hidden />
-                  </p>
-                </li>
-              ))}
-            </ul>
+
+            {/* 7 + 8 · Lead copy and carousel */}
+            <div className="contents xl:flex xl:flex-col xl:items-start xl:gap-4">
+              <HeroCarousel slides={getHome(locale).heroSlides} labels={t} leadClassName="min-h-[132px] md:pr-4 xl:min-h-0 xl:w-full" />
+            </div>
           </div>
 
-          {/* 7 + 8 · Lead copy and carousel: one bottom-anchored column on desktop, so a
-              long slide (hy/ru, 1280 px laptops) pushes up instead of running into the controls */}
-          <div className="contents xl:absolute xl:bottom-[3%] xl:left-[2.1%] xl:z-30 xl:flex xl:flex-col xl:items-start xl:gap-4">
-            <HeroCarousel
-              slides={getHome(locale).heroSlides}
-              labels={t}
-              leadClassName="min-h-[132px] md:pr-4 xl:min-h-0 xl:w-[max(23cqw,320px)]"
-            />
-          </div>
+          {/* Right column (desktop): today's flights under the headline, caption at the bottom */}
+          <div className="contents xl:absolute xl:bottom-[3%] xl:right-[2%] xl:top-[47%] xl:z-30 xl:flex xl:w-[max(23%,300px)] xl:flex-col xl:justify-between xl:gap-4">
+            {/* 6 · Today's flights: compact rows */}
+            <div className="glass p-3.5 md:col-span-2 xl:col-span-1">
+              <div className="mb-3 flex items-start justify-between gap-3 px-1">
+                <div className="min-w-0">
+                  <h2 className="font-display text-[18px] font-bold leading-tight">{t.todaysFlights}</h2>
+                  <p className="truncate text-[13px] text-ink/65">{t.droneSchedule}</p>
+                </div>
+                <Link
+                  href={SIGN_IN_HREF ?? localizePath("/contact", locale)}
+                  aria-label={t.openFlights}
+                  className="grid size-10 shrink-0 place-items-center rounded-[var(--radius-btn)] bg-surface shadow-[var(--shadow-inner)] transition hover:-translate-y-0.5"
+                >
+                  <svg viewBox="0 0 16 16" fill="none" className="size-4" aria-hidden>
+                    <path d="M4.5 11.5l7-7M5.5 4.5h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+              <ul className="grid gap-1.5">
+                {flights.map((f) => (
+                  <li key={f.site} className="inner flex min-w-0 items-center gap-3 rounded-[12px] px-3 py-2.5">
+                    <span className={`size-2.5 shrink-0 rounded-full ${f.dot}`} aria-hidden />
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-[14px] font-medium">{f.site}</span>
+                      <span className="tabular block truncate text-[12px] text-muted">
+                        {f.time} · {f.status}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* 9 · Caption */}
-          <p className="self-end text-[13px] uppercase leading-snug tracking-[0.02em] text-ink/80 md:col-span-2 md:justify-self-end md:max-w-[320px] md:text-left xl:absolute xl:bottom-[3%] xl:right-[2.1%] xl:z-30 xl:w-[24%] xl:max-w-none">
-            {t.caption}
-          </p>
+            {/* 9 · Caption */}
+            <p className="self-end text-[13px] uppercase leading-snug tracking-[0.02em] text-ink/75 md:col-span-2 md:justify-self-end md:max-w-[320px] md:text-left xl:max-w-none xl:self-auto">
+              {t.caption}
+            </p>
+          </div>
         </div>
       </div>
     </section>
