@@ -1,0 +1,544 @@
+[
+  {
+    "id": "hero-howitworks",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "16:9",
+    "prompt": "A drone pilot in a hi-vis vest and white hard hat holding an enterprise drone controller, a large grey industrial quadcopter hovering in front of a real construction site of a 16-storey reinforced-concrete residential tower in Yerevan, Armenia, with Mount Ararat haze on the horizon. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/hero-howitworks.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-developers",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Aerial drone photograph of a real construction site of a 16-storey reinforced-concrete residential tower in Yerevan, Armenia, with Mount Ararat haze on the horizon, tower crane, fresh concrete floors at the top, formwork and rebar. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-developers.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-banks-lenders",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Two bank credit officers seen from behind in a modern glass office, looking at a large wall monitor that shows only a full-screen aerial drone photograph of a concrete tower under construction, city skyline through the window, shallow depth of field. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-banks-lenders.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-municipal-building-control",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "A municipal building inspector in hi-vis vest and hard hat with a tablet on a construction site, looking up at a concrete residential tower under construction. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-municipal-building-control.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-insurers-sureties",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Top-down aerial drone photograph of a busy urban construction site with a concrete tower core, tower crane, site cabins, material stacks and mud tracks. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-insurers-sureties.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-general-contractors",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Construction workers tying rebar on the top working deck of a concrete tower under construction, plywood formwork and column shutters, city far below. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-general-contractors.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "industry-energy-solar",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Aerial drone photograph of a large utility-scale solar farm, long rows of tilted photovoltaic panels, service roads, inverter stations, dry grass, mountains in the distance. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/industry-energy-solar.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-progress",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Low oblique aerial drone photograph of a real construction site of a 16-storey reinforced-concrete residential tower in Yerevan, Armenia, with Mount Ararat haze on the horizon, some floors with facade panels, upper floors open frame, crane lifting rebar. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-progress.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-3d",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "An industrial drone flying a survey grid high above a construction site at golden hour, photogrammetry mission, concrete tower under construction below. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-3d.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-documents",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Close-up of a construction engineer's hands holding a tablet that shows a full-screen aerial photograph of a concrete tower under construction, rolled blueprints and a white hard hat softly out of focus on a site-office desk, very shallow depth of field. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-documents.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-inspection",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "An enterprise inspection drone hovering close to the concrete facade of a residential building under construction, inspecting precast panels and window openings. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-inspection.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-reports",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "A site manager in a hi-vis vest on a construction site holding an open bound report showing a full-page aerial photograph of the building, the report pages softly out of focus, concrete tower under construction behind, shallow depth of field. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-reports.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-solar",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "Close aerial drone photograph of photovoltaic solar panel rows with visible module frames and soiling, a technician walking between rows. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/service-solar.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "about-team",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "16:9",
+    "prompt": "A small team of construction engineers and a drone pilot in hi-vis vests reviewing a tablet together on a construction site, concrete tower and crane behind them. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/about-team.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "guide-progress",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "16:9",
+    "prompt": "Aerial drone photograph of a real construction site of a 16-storey reinforced-concrete residential tower in Yerevan, Armenia, with Mount Ararat haze on the horizon at mid-morning, crane, scaffold on upper floors. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/guide-progress.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "guide-schedule",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "16:9",
+    "prompt": "A project manager and a site engineer in hi-vis vests standing on a muddy construction site looking up at an unfinished concrete residential tower, one pointing at the upper floors, holding a tablet. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/guide-schedule.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "og",
+    "group": "marketing",
+    "provider": "higgsfield",
+    "aspect": "16:9",
+    "prompt": "Wide aerial drone photograph of a real construction site of a 16-storey reinforced-concrete residential tower in Yerevan, Armenia, with Mount Ararat haze on the horizon, dramatic soft clouds, lots of calm sky at the top. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/marketing/og.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "service-solar-thermal",
+    "group": "marketing",
+    "provider": "openai",
+    "plate": "public/samples/solar/thermal.jpg",
+    "out": "public/images/marketing/service-solar-thermal.webp",
+    "prompt": "Turn this into a real radiometric thermal (infrared, ironbow palette) drone image of a solar farm, keeping exactly the same layout, rows and the hot-spot positions: bright white/yellow single hot cells, an orange warm string, warm soiled modules. Realistic sensor noise and thermal blur, dark purple cool background. No text, no scale bar, no watermark.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-m4-honeycomb",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic close-up photograph of a concrete column with minor honeycombing voids on its surface, construction site, natural light, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/m4-honeycomb.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l13-structure",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph of a tower crane lifting a bundle of rebar above an unfinished concrete building top, overcast sky, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l13-structure.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l12-rebar",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic close-up photograph of exposed steel rebar at the edge of a concrete floor slab with insufficient concrete cover, slight rust, construction site, natural light, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l12-rebar.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l14-structure",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph looking down at the unfinished top of a concrete tower, bare starter bars sticking up from the slab where the next storey should be, empty deck, tower crane hook idle, overcast, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l14-structure.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l8-envelope",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph of a building facade under construction: lower floors clad with light grey precast facade panels, the floors above still open concrete frame with no walls, safety netting, overcast daylight, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l8-envelope.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l5-glazing",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic close drone photograph of a residential building facade under construction, bottom floors with installed dark glass windows, the floor above with empty rectangular window openings in grey facade panels, overcast daylight, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l5-glazing.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l15-structure",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph of a tower crane lifting a bundle of rebar above an unfinished concrete building top, overcast sky, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l15-structure.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l6-crack",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic close-up photograph of a diagonal crack running across a light grey precast concrete facade panel on a building under construction, window frame edge visible, natural light, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l6-crack.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-l12-edge",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph of the edge of a concrete floor slab high on a building under construction with no guardrail or safety net, sheer drop visible, overcast daylight, no people, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/l12-edge.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "defect-crane-water",
+    "group": "defects",
+    "provider": "higgsfield",
+    "aspect": "4:3",
+    "prompt": "photorealistic drone photograph of a yellow tower crane foundation base on a muddy construction site with a large puddle of standing water around the concrete base, overcast, no text. Hyperrealistic documentary photograph, shot on a full-frame camera, natural overcast daylight, true-to-life colours, fine detail, realistic textures and dirt, no text, no lettering, no readable writing, no logos, no watermark, no people facing camera.",
+    "out": "public/images/defects/crane-water.webp",
+    "model": "higgsfield-ai/soul/v2/standard",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-orbit-sw",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/orbit-sw.png",
+    "out": "public/images/flights/m4/orbit-sw.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-west) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-orbit-se",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/orbit-se.png",
+    "out": "public/images/flights/m4/orbit-se.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-orbit-ne",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/orbit-ne.png",
+    "out": "public/images/flights/m4/orbit-ne.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the north-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-facade-s",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/facade-s.png",
+    "out": "public/images/flights/m4/facade-s.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight-on view of the south facade) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-nadir",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/nadir.png",
+    "out": "public/images/flights/m4/nadir.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight top-down nadir view) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m4-deck",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m4/deck.png",
+    "out": "public/images/flights/m4/deck.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (close oblique view of the top working deck) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": null
+  },
+  {
+    "id": "flight-m6-orbit-sw",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/orbit-sw.png",
+    "out": "public/images/flights/m6/orbit-sw.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-west) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-orbit-sw",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m6-orbit-se",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/orbit-se.png",
+    "out": "public/images/flights/m6/orbit-se.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-orbit-se",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m6-orbit-ne",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/orbit-ne.png",
+    "out": "public/images/flights/m6/orbit-ne.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the north-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-orbit-ne",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m6-facade-s",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/facade-s.png",
+    "out": "public/images/flights/m6/facade-s.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight-on view of the south facade) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-facade-s",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m6-nadir",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/nadir.png",
+    "out": "public/images/flights/m6/nadir.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight top-down nadir view) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-nadir",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m6-deck",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m6/deck.png",
+    "out": "public/images/flights/m6/deck.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (close oblique view of the top working deck) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m6-deck",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-orbit-sw",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/orbit-sw.png",
+    "out": "public/images/flights/m8/orbit-sw.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-west) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-orbit-sw",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-orbit-se",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/orbit-se.png",
+    "out": "public/images/flights/m8/orbit-se.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the south-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-orbit-se",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-orbit-ne",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/orbit-ne.png",
+    "out": "public/images/flights/m8/orbit-ne.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (oblique aerial view from the north-east) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-orbit-ne",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-facade-s",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/facade-s.png",
+    "out": "public/images/flights/m8/facade-s.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight-on view of the south facade) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-facade-s",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-nadir",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/nadir.png",
+    "out": "public/images/flights/m8/nadir.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (straight top-down nadir view) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-nadir",
+      "ok": true
+    }
+  },
+  {
+    "id": "flight-m8-deck",
+    "group": "flights",
+    "provider": "openai",
+    "plate": "data/plates/m8/deck.png",
+    "out": "public/images/flights/m8/deck.webp",
+    "prompt": "Turn this 3D render into a hyperrealistic photograph taken by a DJI enterprise drone camera (close oblique view of the top working deck) of a real construction site. Keep EXACTLY the same composition, camera angle, building geometry, number of storeys, which floors have facade panels and windows, the position of the tower crane, site cabins, roads and neighbouring buildings. Do not add or remove floors. Make every surface real: weathered cast-in-place concrete with formwork marks, dusty plywood formwork, rusty rebar, muddy ground with tyre tracks, puddles, real glass reflections, safety netting, small workers in hi-vis on the deck, construction debris, realistic soft overcast daylight and atmospheric haze. No text, no watermark, no timestamp overlay.",
+    "model": "gpt-image-2",
+    "exists": true,
+    "lastRun": {
+      "id": "flight-m8-deck",
+      "ok": true
+    }
+  }
+]

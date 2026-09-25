@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.next-dev/
+.expo/
+dist/
+output/*/storage/
+output/*/prisma/*.db
+output/*/prisma/*.db-journal
+.playwright-mcp/
+.env
+.env*.local
+.DS_Store
+*.tsbuildinfo

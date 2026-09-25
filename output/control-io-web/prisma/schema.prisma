@@ -1,0 +1,291 @@
+// control.io data model. SQLite for local dev; switch provider to "postgresql"
+// and DATABASE_URL for production - nothing here is SQLite-specific.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Org {
+  id        String            @id @default(cuid())
+  name      String
+  slug      String            @unique
+  // Company profile (v1.1). All optional so existing orgs survive `db push`.
+  role      String            @default("developer") // developer | lender | authority | insurer | contractor
+  legalName String?
+  taxId     String?
+  address   String?
+  phone     String?
+  email     String?
+  website   String?
+  logoKey   String? // storage key, served as logoUrl
+  createdAt DateTime          @default(now())
+  users     User[]
+  projects  Project[]
+  shares    ProjectShare[] // projects other orgs share with this org (the inspector persona)
+  orders    InspectionOrder[] // orders this org placed
+}
+
+model User {
+  id           String            @id @default(cuid())
+  email        String            @unique
+  name         String
+  passwordHash String
+  role         String            @default("supervisor") // owner | supervisor | viewer
+  orgId        String
+  org          Org               @relation(fields: [orgId], references: [id])
+  createdAt    DateTime          @default(now())
+  reports      Report[]
+  orders       InspectionOrder[]
+}
+
+model Project {
+  id                String            @id @default(cuid())
+  orgId             String
+  org               Org               @relation(fields: [orgId], references: [id])
+  name              String
+  slug              String            @unique
+  address           String
+  lat               Float
+  lng               Float
+  developer         String
+  permitNo          String?
+  floorsTotal       Int
+  floorHeightM      Float             @default(3.2)
+  startDate         DateTime
+  plannedCompletion DateTime
+  // Project detail (v1.1)
+  contractor        String?
+  lender            String?
+  buildingType      String? // e.g. "Residential tower"
+  grossAreaM2       Float?
+  units             Int?
+  createdAt         DateTime          @default(now())
+  documents         Document[]
+  milestones        Milestone[]
+  flights           Flight[]
+  findings          LagFinding[]
+  reports           Report[]
+  shares            ProjectShare[]
+  orders            InspectionOrder[]
+}
+
+model Document {
+  id         String      @id @default(cuid())
+  projectId  String
+  project    Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  kind       String // schedule | permit | contract | other
+  title      String
+  fileKey    String
+  sha256     String
+  pages      Int         @default(0)
+  issuer     String?
+  issuedAt   DateTime?
+  status     String      @default("uploaded") // uploaded | extracting | extracted | failed
+  error      String?
+  uploadedAt DateTime    @default(now())
+  milestones Milestone[]
+}
+
+model Milestone {
+  id           String    @id @default(cuid())
+  projectId    String
+  project      Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  documentId   String?
+  document     Document? @relation(fields: [documentId], references: [id], onDelete: SetNull)
+  floor        Int?
+  phase        String // structure | envelope | glazing | finishes
+  plannedStart DateTime
+  plannedEnd   DateTime
+  sourcePage   Int?
+  sourceQuote  String?
+
+  @@index([projectId, phase, floor])
+}
+
+model Flight {
+  id             String                @id @default(cuid())
+  projectId      String
+  project        Project               @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  capturedAt     DateTime
+  pilot          String?
+  drone          String?
+  source         String                @default("upload") // upload | mobile | sample | order
+  status         String                @default("uploaded") // uploaded | reconstructing | assessing | done | failed
+  error          String?
+  orderId        String?               @unique // set when the flight was flown for an InspectionOrder
+  order          InspectionOrder?      @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  createdAt      DateTime              @default(now())
+  shots          Shot[]
+  reconstruction Reconstruction?
+  observations   ProgressObservation[]
+  findings       LagFinding[]
+  reports        Report[]
+}
+
+model Shot {
+  id         String   @id @default(cuid())
+  flightId   String
+  flight     Flight   @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  fileKey    String
+  sha256     String
+  view       String   @default("orbit") // orbit | nadir | facade | deck | model-capture
+  label      String?
+  capturedAt DateTime
+  lat        Float?
+  lng        Float?
+  altM       Float?
+  width      Int?
+  height     Int?
+  createdAt  DateTime @default(now())
+}
+
+model Reconstruction {
+  id             String   @id @default(cuid())
+  flightId       String   @unique
+  flight         Flight   @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  provider       String // sample | nodeodm
+  jobId          String?
+  status         String   @default("queued") // queued | running | done | failed
+  meshKey        String?
+  heightM        Float?
+  floorsDetected Int?
+  createdAt      DateTime @default(now())
+}
+
+model ProgressObservation {
+  id         String  @id @default(cuid())
+  flightId   String
+  flight     Flight  @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  floor      Int
+  phase      String
+  pct        Float
+  confidence Float
+  shotIds    String  @default("[]") // JSON array of Shot ids
+  rationale  String?
+  source     String  @default("ai") // ai | mesh | manual | seed
+
+  @@unique([flightId, floor, phase])
+}
+
+model LagFinding {
+  id          String   @id @default(cuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  flightId    String
+  flight      Flight   @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  milestoneId String?
+  floor       Int?
+  phase       String
+  plannedPct  Float
+  observedPct Float
+  daysBehind  Int
+  severity    String
+  plannedEnd  DateTime
+  evidence    String   @default("[]") // JSON array of Shot ids
+  createdAt   DateTime @default(now())
+}
+
+model Report {
+  id          String           @id @default(cuid())
+  projectId   String
+  project     Project          @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  flightId    String
+  flight      Flight           @relation(fields: [flightId], references: [id], onDelete: Cascade)
+  createdById String?
+  createdBy   User?            @relation(fields: [createdById], references: [id])
+  fileKey     String
+  sha256      String
+  pages       Int
+  daysBehind  Int
+  createdAt   DateTime         @default(now())
+  order       InspectionOrder? // the order this report was delivered for
+}
+
+// ---------------------------------------------------------------------------
+// On-demand inspections (v1.1). See API.md "On-demand inspections (v1.1)" and
+// lib/domain/orderTypes.ts for the wire shapes.
+// ---------------------------------------------------------------------------
+
+/// Gives another org access to a project: "read" to track, "order" to also
+/// order inspections (e.g. the building-control authority = inspector persona).
+model ProjectShare {
+  id        String   @id @default(cuid())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  orgId     String
+  org       Org      @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  access    String   @default("read") // read | order
+  createdAt DateTime @default(now())
+
+  @@unique([projectId, orgId])
+  @@index([orgId])
+}
+
+model InspectionOrder {
+  id               String       @id @default(cuid())
+  number           String       @unique // INS-2026-0007
+  projectId        String
+  project          Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  orgId            String // the ordering org (project owner org or an org with a ProjectShare)
+  org              Org          @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  requestedById    String
+  requestedBy      User         @relation(fields: [requestedById], references: [id], onDelete: Cascade)
+  kind             String // full | revision | targeted
+  priority         String       @default("asap") // asap | scheduled
+  status           String       @default("requested") // requested | confirmed | dispatched | on_site | flying | processing | delivered | cancelled
+  // = projectId while the order is active, null once delivered/cancelled.
+  // The unique index is the DB-enforced "one active order per project" rule.
+  activeProjectId  String?      @unique
+  timeScale        Float        @default(1) // DISPATCH_TIME_SCALE frozen at creation
+  scheduledFor     DateTime? // priority = scheduled only
+  // Milestones (actual times; the eta*/reportDueAt fields are estimates until reached)
+  confirmedAt      DateTime?
+  dispatchedAt     DateTime?
+  etaArrivalFrom   DateTime?
+  etaArrivalTo     DateTime?
+  arrivedAt        DateTime? // on_site
+  flightStartedAt  DateTime? // flying
+  flightEndedAt    DateTime? // processing
+  reportDueAt      DateTime? // flightEndedAt + 12 h (estimate before the flight)
+  deliveredAt      DateTime?
+  cancelledAt      DateTime?
+  crew             String? // JSON Crew, set at dispatch
+  contactName      String
+  contactPhone     String
+  accessNotes      String?
+  focus            String       @default("[]") // JSON string[]
+  priceAmd         Int // quoted price at order time, paid by invoice
+  reportId         String?      @unique
+  report           Report?      @relation(fields: [reportId], references: [id], onDelete: SetNull)
+  flight           Flight?
+  // Delivery lease: the ticker claims an order before building its flight + report.
+  deliveryLeaseAt  DateTime?
+  deliveryAttempts Int          @default(0)
+  deliveryError    String?
+  version          Int          @default(0) // optimistic lock for advanceAndPersist
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  events           OrderEvent[]
+
+  @@index([projectId, createdAt])
+  @@index([orgId, createdAt])
+  @@index([status])
+}
+
+/// One row per reached status (plus a single "delayed" row after repeated delivery failures).
+model OrderEvent {
+  id        String          @id @default(cuid())
+  orderId   String
+  order     InspectionOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  status    String // OrderStatus | delayed
+  message   String
+  at        DateTime // when the status was due/reached (not when it was persisted)
+  createdAt DateTime        @default(now())
+
+  @@unique([orderId, status])
+  @@index([orderId, at])
+}

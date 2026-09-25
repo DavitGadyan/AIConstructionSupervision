@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "control.io",
+    "slug": "control-io-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "control-io-mobile",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#E4E8EA",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "io.control.field"
+    },
+    "android": {
+      "package": "io.control.field"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-image",
+      "expo-sharing",
+      "expo-secure-store",
+      ["expo-notifications", { "color": "#0A8FA3" }],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "control.io uploads drone frames from your library as flight evidence.",
+          "cameraPermission": "control.io takes site photos to attach to a flight."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "control.io tags uploaded frames with your position when the image has no GPS."
+        }
+      ]
+    ],
+    "experiments": { "typedRoutes": true }
+  }
+}

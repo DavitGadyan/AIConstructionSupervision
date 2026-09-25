@@ -1,0 +1,83 @@
+# control.io
+
+> control.io is an independent construction-supervision service that flies drones over multistorey building sites, reconstructs each flight as a 3D model, compares it with the official construction schedule, and issues evidence-grade PDF reports that show whether, where and by how much a project is late. It also runs drone thermal and RGB inspections of solar panels.
+
+control.io serves property developers, banks and lenders, municipal building control, insurers and sureties, general contractors, and solar plant owners. Every flight produces a 3D mesh, orthomosaic and point cloud; an AI reads the schedule, permits and contracts into milestones with page citations; and each PDF report carries SHA-256 hashes of every image with the cited documents annexed.
+
+Last updated: 2026-09-23
+
+## Core pages
+
+- [Home](https://control.io/): What control.io is, how it works, FAQ
+- [Services](https://control.io/services): The six services in detail
+- [Pricing](https://control.io/pricing): Pilot, Portfolio and Enterprise / Lender plans in USD, plus per-inspection prices in AMD
+- [About](https://control.io/about): Company, principles and team
+- [Contact](https://control.io/contact): Book a pilot flight
+
+## On-demand inspections
+
+Owners and building inspectors can order a single drone inspection between planned flights, from the control.io app (App Store and Google Play: coming soon) or the web dashboard, or via [Contact](https://control.io/contact?topic=inspection).
+
+- Promise: ASAP order → car + drone crew on site within 3–4 hours of order confirmation → independent PDF report within 12 hours of the flight.
+- Service area: Yerevan and Kotayk (Armenia).
+- Kinds: full inspection (whole building, all facades, nadir grid, 3D model, progress against the schedule); revision (re-inspection of open findings after the developer reports them fixed); targeted inspection (specific floors, facades or issues).
+- Prices per inspection (AMD, VAT excluded, paid by invoice, no in-app payment): full 180,000 scheduled / 225,000 ASAP; revision 90,000 / 112,500; targeted 120,000 / 150,000. ASAP adds 25%. Scheduled slots must be at least 3 hours ahead.
+- Live tracking: order status, crew and arrival window in the app; the report arrives in the app and dashboard.
+- Fine print: daylight flying only; strong wind, rain or restricted airspace can move the slot, and control.io calls the site contact if so.
+- Details: [Per-inspection prices](https://control.io/pricing#inspections), [How ordering works](https://control.io/#order-from-phone)
+
+## Services
+
+- [Construction progress monitoring & schedule verification](https://control.io/services#progress-monitoring): Scheduled drone flights measure what was actually built and set it against what the schedule says should exist by that date.
+- [3D reconstruction & as-built mapping](https://control.io/services#3d-reconstruction): Photogrammetry turns every flight into a measurable 3D mesh, orthomosaic and point cloud.
+- [Construction document intelligence](https://control.io/services#document-intelligence): AI reads schedules, permits and contracts and turns them into dated milestones, each with a page citation.
+- [High-precision structure & facade inspection](https://control.io/services#structure-facade-inspection): Close-range facade passes capture cracks, missing anchors and envelope defects at a known ground sample distance.
+- [Delay evidence reports & real-time monitoring](https://control.io/services#delay-evidence-reports): A live project feed plus PDF reports with hashed imagery and the official documents annexed.
+- [Solar panel inspection](https://control.io/services#solar-inspection): Thermal and RGB drone surveys find hot-spots, soiling, cracked cells, disconnected strings and shading.
+
+## Industries
+
+- [Developers](https://control.io/industries/developers): Independent proof of progress for buyers, boards and investors, without waiting for the contractor's monthly report.
+- [Banks & lenders](https://control.io/industries/banks-lenders): Release construction loan tranches against measured progress, with evidence your credit committee can file.
+- [Municipal building control](https://control.io/industries/municipal-building-control): Check permitted works against what is being built, across many sites, without sending an inspector to every one.
+- [Insurers & sureties](https://control.io/industries/insurers-sureties): Underwrite and monitor construction risk with a dated visual record of every insured or bonded site.
+- [General contractors](https://control.io/industries/general-contractors): Show owners exactly where the programme stands and defend your own delay claims with the same evidence.
+- [Energy & Solar](https://control.io/industries/energy-solar): Thermal and RGB drone inspection of solar farms, with every anomaly pinned to a module.
+
+## Guides
+
+- [What is drone construction progress monitoring?](https://control.io/resources/what-is-drone-construction-progress-monitoring): A plain-language guide to drone construction progress monitoring: how flights, photogrammetry and schedule comparison work together to measure what has been built.
+- [How to prove a developer is behind schedule (earned schedule explained)](https://control.io/resources/how-to-prove-a-developer-is-behind-schedule): How to turn construction progress into a delay measured in days using earned schedule, and what evidence you need to prove it to a lender, buyer or court.
+- [Drone thermal inspection of solar panels: anomaly classes](https://control.io/resources/drone-thermal-inspection-of-solar-panels): Which solar PV defects a drone thermal inspection finds, how they look in thermal images, how IEC TS 62446-3 classifies them, and what conditions an inspection needs.
+
+## Other languages
+
+The whole marketing site is also published in Armenian and Russian. English at the unprefixed URLs is the primary version; each page links its translations with hreflang.
+
+- [Հայերեն — Armenian llms.txt](https://control.io/llms-hy.txt): Armenian summary with links to every /hy page
+- [Русский — Russian llms.txt](https://control.io/llms-ru.txt): Russian summary with links to every /ru page
+
+### Հայերեն (Armenian, /hy)
+
+- [Գլխավոր](https://control.io/hy): control.io-ի մասին, ինչպես է աշխատում, ՀՏՀ
+- [Ծառայություններ](https://control.io/hy/services)
+- [Ոլորտներ](https://control.io/hy/industries)
+- [Գներ](https://control.io/hy/pricing)
+- [Ռեսուրսներ](https://control.io/hy/resources)
+- [Մեր մասին](https://control.io/hy/about)
+- [Կապ](https://control.io/hy/contact)
+
+### Русский (Russian, /ru)
+
+- [Главная](https://control.io/ru): что такое control.io, как это работает, частые вопросы
+- [Услуги](https://control.io/ru/services)
+- [Отрасли](https://control.io/ru/industries)
+- [Цены](https://control.io/ru/pricing)
+- [Материалы](https://control.io/ru/resources)
+- [О нас](https://control.io/ru/about)
+- [Контакты](https://control.io/ru/contact)
+
+## Optional
+
+- [Full plain-text product facts](https://control.io/llms-full.txt): Services, methodology, pricing and FAQ in one file
+- [Sitemap](https://control.io/sitemap.xml)

@@ -1,0 +1,273 @@
+# control.io — full product facts
+
+control.io is an independent construction-supervision service that flies drones over multistorey building sites, reconstructs each flight as a 3D model, compares it with the official construction schedule, and issues evidence-grade PDF reports that show whether, where and by how much a project is late.
+
+Website: https://control.io
+Contact: hello@control.io · +374 00 000 000 · Yerevan, Armenia
+Last updated: 2026-09-23
+
+## Summary
+
+- What: independent drone supervision of multistorey construction, plus drone thermal inspection of solar plants.
+- Inputs: drone photos from repeatable flight routes; construction schedules, building permits, contracts and loan agreements (PDF, including scans).
+- Processing: photogrammetric 3D reconstruction (mesh, orthomosaic, point cloud); AI extraction of dated milestones with page citations, confirmed by an engineer; floor-by-floor, trade-by-trade comparison; earned schedule conversion of progress into days.
+- Outputs: per-floor verdicts (on track / watch / late / critical) with days behind; live dashboard; PDF delay reports with SHA-256 hashes of every image and the cited documents annexed; geo-tagged solar defect maps.
+
+## Methodology: how it works
+
+1. Fly: A certified pilot flies a saved route: orbits, facade passes and a nadir grid. The same route every visit keeps images comparable.
+2. Reconstruct: Photogrammetry rebuilds the site as a 3D mesh, orthomosaic and point cloud. Every photo is hashed on upload.
+3. Compare with the plan: The model is measured floor by floor and set against milestones the AI extracted from the schedule, permit and contract.
+4. Report: You receive a verdict per floor and trade, days behind in earned-schedule terms, and a PDF with the evidence annexed.
+
+Earned schedule: the date on the baseline plan at which the currently measured progress was planned to be complete (ES). Schedule variance in time SV(t) = ES − actual date; SPI(t) = ES ÷ actual time. Example (product illustration): Tower B planned 61% by 7 September, measured 47%; the plan reached 47% on 10 August, so Tower B is 28 days behind.
+
+Context: McKinsey & Company (2015, "Imagining construction's digital future") reported that large construction projects typically take 20% longer to finish than scheduled.
+
+## Services
+
+### Construction progress monitoring & schedule verification
+URL: https://control.io/services#progress-monitoring
+control.io flies the same route over your site on a fixed cadence, counts completed floors, slabs and envelope panels in the reconstruction, and compares them with the baseline programme. The output is a per-floor, per-trade verdict: on track, watch or late, with the number of days behind.
+- Per-floor verdicts: Each storey and trade gets a status and a day count, not a vague percentage.
+- Same route every flight: Repeatable flight paths make month-to-month images directly comparable.
+- Earned schedule, not guesses: Progress is converted into schedule time so a slip reads as days behind.
+
+### 3D reconstruction & as-built mapping
+URL: https://control.io/services#3d-reconstruction
+Overlapping drone photos are processed into a textured 3D mesh, a top-down orthomosaic and a dense point cloud. Engineers can measure heights, openings and stockpile volumes directly in the browser, and compare any two flights side by side.
+- Mesh, ortho, point cloud: Standard photogrammetry outputs you can export to your own CAD or BIM tools.
+- Measure in the browser: Distances, heights and areas taken straight from the reconstruction.
+- Volumes and earthworks: Stockpile and excavation volumes calculated between flights.
+
+### Construction document intelligence
+URL: https://control.io/services#document-intelligence
+Upload the construction schedule, building permit and contract. control.io extracts every dated obligation into a milestone list and links each one back to the page it came from, so the comparison with the drone evidence rests on the developer's own documents.
+- Milestones with citations: Every extracted date points to the source page and line for audit.
+- Schedules, permits, contracts: Works with PDF programmes, scanned permits and contract annexes.
+- Human review built in: An engineer confirms the milestone list before it is used in a report.
+
+### High-precision structure & facade inspection
+URL: https://control.io/services#structure-facade-inspection
+Vertical facade passes at a fixed stand-off distance produce high-resolution images of every elevation. Defects are tagged on the 3D model by floor and grid line, so the contractor receives a location, not just a photo.
+- Located on the model: Every defect pinned to a floor, elevation and grid position.
+- No scaffolding or rope access: Survey tall elevations without closing the site or the street.
+- Before-and-after proof: Re-fly the same pass to confirm the defect was repaired.
+
+### Delay evidence reports & real-time monitoring
+URL: https://control.io/services#delay-evidence-reports
+Stakeholders follow the project in a live dashboard between flights. After each flight control.io issues a PDF report that lists every late milestone, shows the drone image that proves it, records a SHA-256 hash of each photo and annexes the schedule pages it relies on, so the report can be checked independently.
+- SHA-256 per image: Each photo is hashed at upload so later tampering is detectable.
+- Documents annexed: The cited schedule and permit pages travel inside the report.
+- Live feed between reports: Flights, verdicts and alerts appear in the dashboard as they land.
+
+### Solar panel inspection
+URL: https://control.io/services#solar-inspection
+A radiometric thermal camera and an RGB camera fly the array together. Anomalies are classified along the lines of IEC TS 62446-3 (hot cells, active bypass diodes, open strings, soiling, vegetation shading) and each one is pinned to a module on a geo-tagged defect map, delivered with a PDF report.
+- Thermal + RGB together: Heat signatures are confirmed against a visual image of the same module.
+- Per-module defect map: Every anomaly geo-tagged to a row, table and module position.
+- Prioritised PDF report: Anomalies ranked by class so O&M crews fix safety issues first.
+
+## Principles
+
+- Independence: We are not the contractor and not the developer. Our pilots, our processing and our reports answer to the evidence, which is why lenders and municipalities can rely on them.
+- Evidence: Original images are kept, hashed and linked to the schedule page they test. Anyone can re-open a finding and see exactly what it rests on.
+- Speed: A delay found in month three can still be recovered. Regular flights and automatic comparison surface slippage while there is time to act on it.
+
+## Industries
+
+### Developers
+URL: https://control.io/industries/developers
+For a developer, control.io is an independent check on what the main contractor reports. A drone flies each site on a fixed cadence, the flight is rebuilt as a 3D model, and the model is compared with the programme so you see, per floor and per trade, whether the building is where it should be on that date.
+Problems and how control.io helps:
+- Progress reports come from the contractor whose performance they describe. → Drone measurements are taken by a third party and the raw imagery is kept, hashed, for anyone to re-check.
+- Buyers and investors ask for updates the site team has no time to prepare. → Share a read-only live feed or a branded PDF after every flight, generated without site-team effort.
+- Slippage becomes visible only when a handover date is already lost. → Per-trade day counts flag a floor as 'watch' weeks before it becomes a critical delay.
+Deliverables:
+- Monthly or bi-weekly drone flights on a repeatable route
+- 3D model and orthomosaic for each flight
+- Floor-by-floor progress verdict against the programme
+- Investor-ready PDF report with image evidence
+- Read-only live dashboard for buyers and partners
+FAQ:
+Q: Does control.io replace the contractor's progress report?
+A: No. It sits beside it. The contractor still reports; control.io gives you an independent measurement so you can tell when the two disagree.
+Q: Can I show the dashboard to apartment buyers?
+A: Yes. You can publish a read-only view per project, limited to imagery and high-level progress, without exposing commercial documents.
+Q: How often should a residential tower be flown?
+A: Monthly flights suit most structures. During frame and envelope, when floors change quickly, bi-weekly flights give a clearer trend.
+
+### Banks & lenders
+URL: https://control.io/industries/banks-lenders
+For lenders, control.io verifies a drawdown request before the money moves. Each disbursement milestone is matched to what the drone actually recorded on site, and the result is a PDF with hashed images and the relevant contract pages annexed, suitable for the credit file.
+Problems and how control.io helps:
+- Drawdown requests rely on the borrower's own progress claims. → Tranche milestones are checked against drone measurements taken independently of the borrower.
+- Site visits across a large loan book are slow and expensive. → One portfolio view shows every financed project, its schedule variance and its last flight date.
+- Evidence of a covenant breach has to stand up if the loan is disputed. → Reports carry SHA-256 hashes of every photo and cite the contract page each milestone comes from.
+Deliverables:
+- Drawdown verification report per disbursement
+- Portfolio dashboard across all financed sites
+- Earned schedule variance in days for each project
+- Tamper-evident image evidence with SHA-256 hashes
+- API export into loan-management systems (Enterprise)
+FAQ:
+Q: Can control.io verify a specific loan tranche milestone?
+A: Yes. Upload the loan agreement's disbursement schedule; each milestone becomes a checkable item and the next flight reports whether it has been reached.
+Q: Is the evidence usable in a dispute with the borrower?
+A: The reports are designed to be verifiable: original images are retained, each is hashed at upload, and the cited documents are annexed. Admissibility is always a question for your counsel and jurisdiction.
+Q: Can the reports carry our bank's branding?
+A: White-label reports and dashboards are part of the Enterprise / Lender plan.
+
+### Municipal building control
+URL: https://control.io/industries/municipal-building-control
+For a building-control authority, control.io is a way to watch many permitted sites at once. Permit conditions and approved programmes become milestones, scheduled drone flights record what exists, and the office sees which projects are stalled, ahead of permit, or out of step with what was approved.
+Problems and how control.io helps:
+- Inspectors cannot visit every active permit often enough. → Scheduled flights cover many sites, and inspectors go where the data shows a problem.
+- Abandoned or stalled projects are noticed late. → A site with no measurable change between flights is flagged automatically.
+- Enforcement needs dated, attributable evidence. → Every image carries capture time, location and a hash, and is tied to the permit clause it concerns.
+Deliverables:
+- City-wide map of monitored permits and their status
+- Permit-linked milestone extraction with page citations
+- Stalled-site and deviation alerts
+- Dated, hashed image evidence per inspection
+- Exportable reports for enforcement files
+FAQ:
+Q: Can control.io tell if a building exceeds its permitted height?
+A: The 3D reconstruction measures heights and storey counts, which can be compared with the permitted envelope. A qualified officer should confirm any finding before enforcement.
+Q: Who flies the drones for a municipality?
+A: control.io's certified pilots, or the municipality's own drone team using our flight plans and upload app.
+Q: Does it work with scanned paper permits?
+A: Yes. Scanned permits are read with OCR and every extracted condition keeps a link to the scanned page for review.
+
+### Insurers & sureties
+URL: https://control.io/industries/insurers-sureties
+For insurers and sureties, control.io provides a dated, repeatable record of each site. Underwriters see real progress before renewing cover, surety teams see early signs that a bonded contractor is falling behind, and claims teams have a timeline of images from before and after an event.
+Problems and how control.io helps:
+- Surety losses often follow delays that were visible months earlier. → Earned schedule variance shows a bonded project drifting long before default.
+- Claims hinge on what the site looked like before the loss. → Each flight is a dated baseline, stored with hashes so it cannot be quietly replaced.
+- Risk surveys are one-off snapshots. → A recurring flight cadence turns the survey into a trend over the life of the policy.
+Deliverables:
+- Pre-cover and renewal site survey
+- Recurring progress and condition flights
+- Early-warning alerts on schedule drift
+- Before/after image sets for claims
+- Portfolio export via API
+FAQ:
+Q: Can control.io help with a builder's risk claim?
+A: If the site was flown before the incident, the earlier reconstruction documents its prior condition, and a post-event flight records the damage on the same model.
+Q: Does control.io assess contractor financial health?
+A: No. It measures physical progress against the schedule. Sureties often use the variance as one input alongside their own financial review.
+Q: How long are flight records kept?
+A: For the duration of the contract, and longer by agreement for policies with extended liability periods.
+
+### General contractors
+URL: https://control.io/industries/general-contractors
+For a general contractor, control.io documents your own progress so disputes are settled with images rather than arguments. The same flights that show an owner where the job stands also record owner-caused hold-ups, late design information and access problems for extension-of-time claims.
+Problems and how control.io helps:
+- Extension-of-time claims fail without contemporaneous records. → Every flight is a dated, hashed record of site condition, stored in one timeline.
+- Subcontractor progress is hard to see across a large frame. → Per-trade progress on the 3D model shows which crew is behind on which floor.
+- Owner meetings turn into debates about percentages. → Earned schedule turns progress into days, a unit everyone reads the same way.
+Deliverables:
+- Per-trade, per-floor progress on the 3D model
+- Contemporaneous record for delay and disruption claims
+- Look-ahead comparison against the current programme
+- Owner-ready PDF reports
+- Stockpile and earthworks volumes
+FAQ:
+Q: Will control.io be used against us by the owner?
+A: The data is neutral: it records what was built and when. Contractors use the same record to prove owner-caused delays and support time extensions.
+Q: Can we use our own drone team?
+A: Yes. We supply flight plans and an upload app; processing, comparison and reporting run on control.io.
+Q: Does it import our programme from scheduling software?
+A: Upload a PDF export of the programme. The AI extracts activities and dates, and an engineer confirms them before first use.
+
+### Energy & Solar
+URL: https://control.io/industries/energy-solar
+For solar owners and O&M teams, control.io runs drone thermal and RGB inspections of PV plants. Anomalies are classified in the style of IEC TS 62446-3, each one is geo-tagged to its module, and the result is a ranked defect list and PDF report your field crew can work through row by row.
+Problems and how control.io helps:
+- Walking a large plant with a handheld camera takes days. → A drone covers the array in a fraction of the time under consistent irradiance.
+- Thermal images alone are hard to act on. → Each anomaly is paired with an RGB image and a module position on the map.
+- Warranty claims need documented evidence of module defects. → Reports record the anomaly class, temperature difference and conditions at capture.
+Deliverables:
+- Radiometric thermal and RGB imagery of the full array
+- Anomaly classification: hot cells, bypass diodes, open strings, soiling, shading
+- Geo-tagged per-module defect map
+- Prioritised PDF report for O&M
+- Year-on-year comparison of repeat inspections
+FAQ:
+Q: What solar defects can a drone thermal inspection find?
+A: Hot-spots from cracked or damaged cells, active bypass diodes, disconnected modules and strings, soiling and bird droppings, vegetation shading and some junction-box faults.
+Q: What conditions are needed for a thermal PV inspection?
+A: Clear sky and sufficient irradiance on the module plane (IEC TS 62446-3 calls for at least 600 W/m²), low wind and the plant operating under load.
+Q: Do you inspect rooftop systems as well as ground-mount farms?
+A: Yes, where airspace and roof access allow a safe flight. Ground-mount plants are the most common case.
+
+## On-demand inspections
+
+Owners and building inspectors can order a single drone inspection between planned flights, from the control.io app (App Store and Google Play: coming soon) or the web dashboard, or via [Contact](https://control.io/contact?topic=inspection).
+
+- Promise: ASAP order → car + drone crew on site within 3–4 hours of order confirmation → independent PDF report within 12 hours of the flight.
+- Service area: Yerevan and Kotayk (Armenia).
+- Kinds: full inspection (whole building, all facades, nadir grid, 3D model, progress against the schedule); revision (re-inspection of open findings after the developer reports them fixed); targeted inspection (specific floors, facades or issues).
+- Prices per inspection (AMD, VAT excluded, paid by invoice, no in-app payment): full 180,000 scheduled / 225,000 ASAP; revision 90,000 / 112,500; targeted 120,000 / 150,000. ASAP adds 25%. Scheduled slots must be at least 3 hours ahead.
+- Live tracking: order status, crew and arrival window in the app; the report arrives in the app and dashboard.
+- Fine print: daylight flying only; strong wind, rain or restricted airspace can move the slot, and control.io calls the site contact if so.
+- Details: [Per-inspection prices](https://control.io/pricing#inspections), [How ordering works](https://control.io/#order-from-phone)
+
+## Pricing (USD, excluding taxes)
+
+- Pilot: from $1,490 per month. One site, one clear answer. Includes: 1 active construction site; Monthly drone flight on a saved route; 3D model, orthomosaic and point cloud per flight; AI milestone extraction from your schedule; PDF delay report after every flight; Live dashboard for 5 users.
+- Portfolio: from $5,900 per month. Developers and lenders with several live projects. Includes: Up to 10 active sites; Bi-weekly flights on every site; Portfolio dashboard with schedule variance; Facade inspection passes included; Drawdown and milestone verification; Unlimited users.
+- Enterprise / Lender: custom pricing. Banks, insurers, cities and large contractors. Includes: Any number of sites and any cadence; REST API and loan-system export; White-label reports and dashboards; Bring-your-own pilots option; Solar inspection programmes; Dedicated evidence engineer.
+
+## Frequently asked questions
+
+Q: What is control.io?
+A: control.io is an independent construction-supervision service. It flies drones over multistorey sites, rebuilds each flight as a 3D model, compares the model with the official construction schedule and issues PDF reports that show which floors are late and by how many days.
+
+Q: How does control.io know whether a building is behind schedule?
+A: The AI extracts dated milestones from the schedule, permit and contract. Each flight's 3D model is measured floor by floor and trade by trade, and the measured progress is converted into earned schedule, the date by which the plan expected that much work. The difference from today is the delay in days.
+
+Q: Are the delay reports usable as evidence?
+A: They are built to be verifiable. Original images are retained, each receives a SHA-256 hash at upload, capture time and location are recorded, and the schedule pages each finding relies on are annexed. Whether a report is admissible in a specific proceeding is a matter for your lawyers and jurisdiction.
+
+Q: How often are sites flown?
+A: Monthly on the Pilot plan and bi-weekly on Portfolio. Enterprise customers can set any cadence, including weekly flights during frame and envelope work.
+
+Q: Who flies the drone?
+A: control.io's certified pilots, operating under local aviation rules. Enterprise customers and contractors with their own drone teams can fly our saved routes and upload through the app.
+
+Q: What 3D outputs do I receive?
+A: A textured 3D mesh, a top-down orthomosaic and a point cloud for every flight, viewable in the browser and exportable for CAD and BIM tools.
+
+Q: Which documents can the AI read?
+A: Construction schedules and programmes (PDF exports), building permits including scanned ones, contracts and loan agreements with milestone schedules. Every extracted milestone keeps a citation to its source page, and an engineer confirms the list before it is used.
+
+Q: Does control.io inspect solar panels?
+A: Yes. Thermal and RGB drone flights detect hot-spots, cracked cells, active bypass diodes, disconnected strings, soiling and vegetation shading. Each anomaly is classified and pinned to a module on a geo-tagged map.
+
+Q: How much does control.io cost?
+A: The Pilot plan for a single site starts from USD 1,490 per month including monthly flights. Portfolio covers up to 10 sites from USD 5,900 per month. Enterprise and lender plans with API access and white-label reports are priced per portfolio.
+
+Q: How fast can you inspect a site on demand?
+A: In Yerevan and Kotayk, an ASAP order from the control.io app or dashboard puts a car with a drone crew on site within 3–4 hours of confirmation, and the independent PDF report arrives within 12 hours of the flight. Owners and building inspectors can order a full inspection, a revision of open findings or specific floors; the price is shown before you confirm and paid by invoice. We fly in daylight only, and strong wind, rain or restricted airspace can move the slot, in which case we call the site contact.
+
+## Guides
+
+### What is drone construction progress monitoring?
+URL: https://control.io/resources/what-is-drone-construction-progress-monitoring
+Author: control.io Field Engineering Team. Published 2026-05-12, updated 2026-09-18.
+Short answer: Drone construction progress monitoring means flying a building site on a regular schedule, turning the photos into a measurable 3D model, and comparing that model with the construction programme. The result is an objective, dated record of what was built and whether it matches the plan.
+Definition — Drone construction progress monitoring: The repeated aerial capture of a construction site with an unmanned aircraft, followed by photogrammetric reconstruction and comparison against the planned schedule, to measure physical progress independently of the parties doing the work.
+
+### How to prove a developer is behind schedule (earned schedule explained)
+URL: https://control.io/resources/how-to-prove-a-developer-is-behind-schedule
+Author: control.io Field Engineering Team. Published 2026-06-03, updated 2026-09-20.
+Short answer: To prove a project is late you need three things: the baseline schedule the developer committed to, an independent dated measurement of what was actually built, and a method that converts the gap into time. Earned schedule does the last step: it finds the date by which the plan expected today's progress, and the difference from today is the delay.
+Definition — Earned schedule (ES): A project-control technique, introduced by Walt Lipke in 2003, that measures schedule performance in units of time. ES is the point on the baseline at which the currently earned amount of work was planned to be complete.
+
+### Drone thermal inspection of solar panels: anomaly classes
+URL: https://control.io/resources/drone-thermal-inspection-of-solar-panels
+Author: control.io Field Engineering Team. Published 2026-07-08, updated 2026-09-15.
+Short answer: A drone thermal inspection flies an infrared camera over a working solar plant and finds modules that run hotter than their neighbours. The heat pattern points to the cause: a single hot cell suggests a crack or hot-spot, a hot third of a module points to an active bypass diode, and a whole warm module or row suggests a disconnected module or string. IEC TS 62446-3 sets out how such inspections should be done and classified.
+Definition — IEC TS 62446-3: An IEC technical specification (Photovoltaic systems – Part 3: Outdoor infrared thermography of photovoltaic modules and plants) that describes how to perform and report thermographic inspections of PV plants, including required conditions and classes of abnormalities.

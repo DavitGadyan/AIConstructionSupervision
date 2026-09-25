@@ -1,0 +1,81 @@
+/*
+ * Typewriter reveal. Letters are real text in the server HTML (SEO/GEO safe);
+ * only their paint is animated.
+ *  - `html.js` is set by an inline script in <head> before first paint
+ *    (components/RootDocument.tsx), so letters start hidden only when
+ *    JavaScript runs - no flash of full text, and no invisible text without JS.
+ *  - `eager` pieces (above the fold) are data-state="play" in the server HTML,
+ *    so the "play" rules below type them from first paint on CSS alone and
+ *    leave them visible (fill-mode both): they never wait for hydration and
+ *    need no fallback.
+ *  - data-state="ssr" is the server HTML of every other piece, before
+ *    hydration. Only that state has the 3 s fallback that reveals everything
+ *    if hydration never happens. After hydration a heading waits hidden in
+ *    "idle" until it is seen, so a heading below the fold is never revealed by
+ *    the timer and then re-hidden and retyped when scrolled to.
+ */
+.root { --step: 34ms; --delay: 0ms; }
+.word { display: inline-block; white-space: nowrap; }
+.ch { display: inline-block; position: relative; white-space: pre; }
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:global(html.js) .root[data-state="ssr"] .ch {
+  opacity: 0;
+  animation: cio-type-fallback 0s linear 3s forwards;
+}
+:global(html.js) .root[data-state="idle"] .ch {
+  opacity: 0;
+}
+:global(html.js) .root[data-state="play"] .ch {
+  animation: cio-type-in 180ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--delay) + var(--i) * var(--step));
+}
+
+/* caret: each letter owns the caret for exactly one step; with data-blink the
+   last one blinks on-off-on, otherwise the next piece of a split headline
+   takes the caret over on the following step. */
+:global(html.js) .root[data-caret="on"][data-state="play"] .ch::after {
+  content: "";
+  position: absolute;
+  top: 0.08em;
+  bottom: 0.08em;
+  right: -0.07em;
+  width: 0.06em;
+  min-width: 2px;
+  background: var(--type-caret, var(--color-accent));
+  border-radius: 1px;
+  opacity: 0;
+  animation: cio-caret var(--step) steps(1, end) calc(var(--delay) + var(--i) * var(--step)) 1;
+}
+:global(html.js) .root[data-caret="on"][data-blink="on"][data-state="play"] .ch.last::after {
+  animation: cio-caret-blink 1s steps(2, jump-none) calc(var(--delay) + var(--i) * var(--step)) 1.5;
+}
+
+@keyframes cio-type-in {
+  from { opacity: 0; transform: translateY(0.12em); filter: blur(2px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes cio-type-fallback { to { opacity: 1; } }
+@keyframes cio-caret { 0%, 100% { opacity: 1; } }
+@keyframes cio-caret-blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .root .ch, :global(html.js) .root .ch { opacity: 1 !important; animation: none !important; transform: none !important; filter: none !important; }
+  .root .ch::after { display: none !important; }
+}
+
+/* A printout shows every heading, typed or not. */
+@media print {
+  .root .ch, :global(html.js) .root .ch { opacity: 1 !important; animation: none !important; transform: none !important; filter: none !important; }
+  .root .ch::after { display: none !important; }
+}

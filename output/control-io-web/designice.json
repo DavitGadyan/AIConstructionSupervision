@@ -1,0 +1,198 @@
+{
+  "project": "control-io-web",
+  "prompt": "control.io - B2B SaaS that supervises multistorey construction sites with drone flights, 3D reconstruction and AI comparison against construction schedule documents to prove developer delays",
+  "platform": "web",
+  "company": "control.io",
+  "overrides": {
+    "primary": "#0A8FA3",
+    "secondary": "#6B737A",
+    "ground": "#E4E8EA",
+    "ink": "#1C2226",
+    "font_display": "Space Grotesk",
+    "font_body": "Inter",
+    "sections": [
+      "nav",
+      "hero",
+      "features",
+      "stats",
+      "timeline",
+      "gallery",
+      "cta"
+    ],
+    "platform": "web",
+    "company": "control.io"
+  },
+  "notes": [],
+  "template_tokens": {
+    "source": "meta",
+    "roles": {
+      "ground": "#E9DCC3",
+      "surface": "#FFFFFF",
+      "ink": "#7A7268",
+      "muted": "#2A2622",
+      "accent": "#F26B2B",
+      "accent2": "#C86D40"
+    },
+    "palette": [
+      "#E9DCC3",
+      "#FFFFFF",
+      "#F26B2B",
+      "#2A2622",
+      "#7A7268"
+    ],
+    "fonts": [
+      "Manrope",
+      "Manrope"
+    ],
+    "style": "glassmorphic",
+    "mode": "dark"
+  },
+  "reference_design": {
+    "slug": "landing-page-and-dashboard-ui-ux-for-productivity-saas-ui-ux-designer",
+    "title": "ORDI - AI Productivity SaaS, Landing Page + Dashboard",
+    "path": "Landing Page & Dashboard UI:UX for Productivity SaaS | UI UX Designer",
+    "use_case": "One product captured as both a marketing landing page and its web dashboard, plus mobile derivations. Landing: top nav (wordmark, 4 links, dark pill CTA), giant two-part uppercase display headline split left/right around a centred 3D hero object, a small 'How it works' video card under the headline, floating glass widget cards (task rows with priority pills, a 'Today's tasks' mini-card pair), a short value paragraph bottom-left, carousel dots + round arrow buttons, tiny uppercase caption bottom-right. Dashboard: top bar (wordmark, search pill + voice button, bell, avatar, solid accent 'Menu' button), floating left icon rail (4 icons + 2 utility icons at the bottom), giant uppercase page headline over the hero image, a horizontal analytics bar with stacked coloured segments and a big total, a wide timeline/schedule card with an 'AI optimised' pill, a solid-accent highlight card holding two sub-cards with count pills and avatar stacks, a right column with a 4-row table (name / priority pill / status / time) and a full-width secondary button, and a ring-gauge card with big centred number and play/pause/plus controls. Warm sand ground, white glass cards, orange + amber + black pills. Best template for any AI-assisted operations product that needs a landing page and an app that share one visual system: planning, analysis, ranking, scheduling, property or asset intelligence.",
+    "reference_url": "",
+    "media": [
+      {
+        "path": "Landing Page & Dashboard UI:UX for Productivity SaaS | UI UX Designer/image_original1.png",
+        "kind": "image",
+        "name": "image_original1.png",
+        "format": "png",
+        "width": 1600,
+        "height": 1200,
+        "shape": "viewport"
+      },
+      {
+        "path": "Landing Page & Dashboard UI:UX for Productivity SaaS | UI UX Designer/image_original2.png",
+        "kind": "image",
+        "name": "image_original2.png",
+        "format": "png",
+        "width": 1600,
+        "height": 1200,
+        "shape": "viewport"
+      },
+      {
+        "path": "Landing Page & Dashboard UI:UX for Productivity SaaS | UI UX Designer/image_original3.png",
+        "kind": "image",
+        "name": "image_original3.png",
+        "format": "png",
+        "width": 1600,
+        "height": 1200,
+        "shape": "viewport"
+      }
+    ],
+    "score": null
+  },
+  "direction": {
+    "style": "glassmorphic",
+    "all_styles": [
+      "claymorphic",
+      "glassmorphic",
+      "minimal",
+      "playful"
+    ],
+    "industry": [
+      "saas",
+      "ai",
+      "developer-tools"
+    ],
+    "layout": [
+      "split-screen",
+      "bento-grid",
+      "sidebar",
+      "centered",
+      "full-bleed",
+      "single-column"
+    ],
+    "mode": "light"
+  },
+  "tokens": {
+    "roles": {
+      "ground": "#E4E8EA",
+      "surface": "#DCE0E2",
+      "ink": "#1C2226",
+      "muted": "#767B7E",
+      "accent": "#0A8FA3",
+      "accent2": "#6B737A"
+    },
+    "palette": [
+      "#E4E8EA",
+      "#DCE0E2",
+      "#0A8FA3",
+      "#1C2226",
+      "#767B7E"
+    ],
+    "fonts": [
+      "Space Grotesk",
+      "Inter"
+    ],
+    "radius": "20px",
+    "shadow": "0 8px 32px rgba(0,0,0,.35)",
+    "section_padding_desktop": "160px",
+    "section_padding_mobile": "96px",
+    "density": "airy",
+    "type_scale": {
+      "display": "clamp(2.5rem, 5vw, 4rem)",
+      "h1": "clamp(2rem, 4vw, 3.25rem)",
+      "h2": "clamp(1.5rem, 2.5vw, 2.25rem)",
+      "body": "16px",
+      "leading_display": "1.1"
+    }
+  },
+  "sections": [
+    "nav",
+    "hero",
+    "features",
+    "stats",
+    "timeline",
+    "gallery",
+    "cta"
+  ],
+  "motion": [
+    {
+      "technique": "3d-webgl",
+      "tool": "three.js / react-three-fiber",
+      "note": "apply ACES filmic tone mapping or the model renders dark and muddy"
+    },
+    {
+      "technique": "reveal-on-scroll",
+      "tool": "IntersectionObserver + CSS",
+      "note": "fire once at ~20% viewport; never re-animate on scroll up"
+    }
+  ],
+  "image_prompts": [
+    {
+      "slot": "hero",
+      "aspect_ratio": "16:9",
+      "prompt": "Wide cinematic hero image for a saas, ai website. control.io. claymorphic, glassmorphic art direction, palette #E9DCC3, #FFFFFF, #F26B2B, #2A2622, no text, no watermark, no UI chrome. Strong single focal point positioned off-centre with generous negative space on the left third for a headline overlay. Shallow depth of field, controlled contrast so white type stays readable over it."
+    },
+    {
+      "slot": "feature-texture",
+      "aspect_ratio": "1:1",
+      "prompt": "Abstract close-up texture evoking saas, ai. claymorphic, glassmorphic art direction, palette #E9DCC3, #FFFFFF, #F26B2B, #2A2622, no text, no watermark, no UI chrome. Macro detail, soft directional light, extremely shallow depth of field, reads as a background at low opacity rather than as a subject."
+    },
+    {
+      "slot": "section-support",
+      "aspect_ratio": "4:3",
+      "prompt": "Editorial supporting photograph for a saas, ai website section. control.io. claymorphic, glassmorphic art direction, palette #E9DCC3, #FFFFFF, #F26B2B, #2A2622, no text, no watermark, no UI chrome. Documentary framing, natural light, one human gesture or one object in use, nothing staged or stock-like."
+    },
+    {
+      "slot": "og-card",
+      "aspect_ratio": "16:9",
+      "prompt": "Open Graph share card background for a saas, ai brand. claymorphic, glassmorphic art direction, palette #E9DCC3, #FFFFFF, #F26B2B, #2A2622, no text, no watermark, no UI chrome. Simple, high contrast, centre kept visually quiet so a logo and title can be composited on top."
+    }
+  ],
+  "constraints": [
+    "No purple-to-blue gradient on a white card unless the reference design actually uses one.",
+    "No emoji as icons. Use a real icon set or draw inline SVG.",
+    "Body text is never below 15px, and never pure #000 on pure #FFF.",
+    "Every section must differ from its neighbour in background, rhythm or column count - eleven identical centred slabs is the single clearest tell of a generated page.",
+    "Buttons need real hover, focus-visible and active states, not just a colour change.",
+    "Respect prefers-reduced-motion: hold transforms, keep opacity fades.",
+    "Images need explicit width/height or aspect-ratio so nothing shifts on load.",
+    "Ship real copy, not lorem ipsum, and not three-word headlines that say nothing.",
+    "Cap backdrop-filter surfaces at ~6 on screen; more will drop frames on mid-range hardware."
+  ],
+  "source_description": "My role. UI UX Designer, UX/UI Designer, SaaS Designer, Dashboard Designer\n\nProject description.\n\nAs a UI/UX Designer, I built both the landing page and the dashboard for a productivity SaaS focused on time management and task prioritization. The landing page was delivered end-to-end \u2014 design plus development \u2014 with clean UI, soft 3D visuals, and clear hierarchy that communicate scheduling, task tracking, and AI-powered workflows. The dashboard was built for clarity under load, combining scheduling, real-time tracking, and performance insights into one system that supports fast decisions in SaaS and B2B environments.\n\nSkills and deliverables\n\nUX & UI\nUX & UI Design\nLanding Page\nWebsite\nSaaS\nLanding ui ux design with 3D model\nLanding ui ux design with 3D model\nSaaS dashboard UI UX design\nSaaS dashboard UI UX design\nResponsive design \nResponsive design\nProductivity SaaS \u2013 UI/UX Design for Landing Page & Dashboard\n\nAs the UI/UX Designer for this productivity SaaS, I built both sides of the product \u2014 the marketing landing page (design + development) and the in-product dashboard. The platform focuses on time management, task prioritization, and AI-powered workflows, and the goal was to carry one coherent design language from the first marketing touchpoint to daily product use.\nThe idea: turn a complex productivity system into something that feels effortless on first impression and stays clear under daily load. Two surfaces, one design language \u2014 focused, structured, quietly modern.\n\u27a1\ufe0f Process:\nUI/UX Research & Strategy:\nWe started with how productivity tools are used in real work environments \u2014 where users lose focus, where interfaces add friction, what separates a tool people open daily from one they abandon. Through user flows, wireframes, and competitive benchmarks, we shaped a UX rooted in clarity and pace.\nLanding Page Design & Development:\nI designed and developed the landing page end-to-end \u2014 not just a Figma handoff. Built as a single narrative: lead with outcome (time saved, tasks done), introduce the mechanics (scheduling, tracking, AI workflows), close with trust. Soft 3D visuals and clean typography carry the product tone without overwhelming the copy.\nDashboard Interface Design:\nDesigned around one principle: stay clear under load. Scheduling, task tracking, time allocation, and performance insights live in one system, but each module earns its own visual rhythm. Users see what matters first and drill down when needed.\nDesign System & Scalability:\nA shared component library underpins both surfaces, so the product stays consistent as new features roll out. Typography, spacing, and interaction patterns defined once and reused everywhere.\nResponsive & Cross-Device:\nBoth landing and dashboard adapt cleanly across desktop, tablet, and mobile \u2014 tuned for real usage patterns (quick checks on mobile, deep work on desktop).\n\ud83c\udfaf Results:\nCovering both landing and dashboard as one designer gave the product a coherent identity from first click to long-term use. The landing communicates value in under 10 seconds; the dashboard turns a dense feature set into a calm daily workspace.\n\ud83d\udd11 Skills & Tools Used:\nUI/UX Designer \u2022 SaaS UI Design \u2022 Dashboard Design \u2022 Landing Page Design & Development \u2022 Productivity App Design \u2022 UX Research \u2022 Design System \u2022 Wireframing & Prototyping \u2022 Figma \u2022 Responsive Web Design\nui ux designer, ui ux designer figma, ui designer, ux designer, ux ui designer, ux product designer, saas ux ui, saas ux designer, saas ui designer, dashboard designer, dashboard ui designer, productivity app designer, landing page designer, ui ux designer saas, ui ux web designer, web designer, figma designer, product designer, ui ux, ui ux designer figma. \ud83d\udcbc\nKey Highlights:\n\nBuilt both landing page (design + development) and dashboard for one productivity SaaS\nDelivered landing as a production-ready page, end-to-end\nDesigned a structured dashboard for task flow, time allocation, and real-time tracking\nIntegrated soft 3D visuals with clean UI for a modern product tone\nCreated one shared design system used across landing and product\nDesigned for clarity under load \u2014 fast decisions in SaaS and B2B environments\n\nOne design language \u2014 from marketing touchpoint to daily product use."
+}
