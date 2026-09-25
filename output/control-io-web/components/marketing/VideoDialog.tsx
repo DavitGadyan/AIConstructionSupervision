@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
+import { STATIC_SITE } from "@/lib/siteMode";
 
 export interface VideoLabels {
   title: string;
@@ -24,11 +25,13 @@ export function VideoDialogTrigger({
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
+  const [opened, setOpened] = useState(false); // the player (and its poster) only exists once asked for
   const open = (e: React.MouseEvent) => {
     if (!dialog.current?.showModal) return; // very old browser: follow the link
     e.preventDefault();
+    setOpened(true);
     dialog.current.showModal();
-    video.current?.play().catch(() => {});
+    requestAnimationFrame(() => video.current?.play().catch(() => {}));
   };
   const close = () => {
     video.current?.pause();
@@ -46,11 +49,13 @@ export function VideoDialogTrigger({
         onClick={(e) => e.target === dialog.current && close()}
         className="m-auto w-[min(1100px,94vw)] overflow-visible bg-transparent p-0 backdrop:bg-ink/70 backdrop:backdrop-blur-sm"
       >
-        <div className="relative overflow-hidden rounded-[20px] bg-ink shadow-2xl">
+        <div className="relative aspect-[3/2] overflow-hidden rounded-[20px] bg-ink shadow-2xl">
+          {opened && (
           <video
             ref={video}
+            autoPlay
             className="block aspect-[3/2] w-full"
-            poster="/images/marketing/drone-scan.webp"
+            poster={STATIC_SITE ? "/images/marketing/drone-scan.w960.webp" : "/images/marketing/drone-scan.webp"}
             muted
             playsInline
             loop
@@ -60,6 +65,7 @@ export function VideoDialogTrigger({
             <source src="/videos/drone-orbit.webm" type="video/webm" />
             <source src="/videos/drone-orbit.mp4" type="video/mp4" />
           </video>
+          )}
           <button
             type="button"
             onClick={close}

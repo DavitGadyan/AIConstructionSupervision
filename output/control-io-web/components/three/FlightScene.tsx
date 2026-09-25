@@ -12,6 +12,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler.js";
+import staticImageLoader from "@/lib/imageLoader";
+import { STATIC_SITE } from "@/lib/siteMode";
 
 const SITE = /^(Ground|SitePad|GravelYard|Road|Neighbour|Fence|Container|Rebar\d|Formstack|Crane|Jib|CounterWeight|Cab|Hoist|HookLoad)/;
 const FLOOR = 3.2;
@@ -97,7 +99,8 @@ function Drone({ t }: { t: React.RefObject<number> }) {
 
 function Stop({ i, t, step }: { i: number; t: React.RefObject<number>; step: React.RefObject<number> }) {
   const s = STOPS[i];
-  const tex = useTexture(`/images/flights/m8/${s.name}.webp`);
+  // a 640 px variant is plenty for a 15 m photo card (static site; the server app serves the original)
+  const tex = useTexture(STATIC_SITE ? staticImageLoader({ src: `/images/flights/m8/${s.name}.webp`, width: 640 }) : `/images/flights/m8/${s.name}.webp`);
   tex.colorSpace = THREE.SRGBColorSpace;
   const group = useRef<THREE.Group>(null);
   const photo = useRef<THREE.Mesh>(null);

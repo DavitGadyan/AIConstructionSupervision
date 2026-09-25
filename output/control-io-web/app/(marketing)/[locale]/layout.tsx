@@ -5,6 +5,7 @@ import { RootDocument } from "@/components/RootDocument";
 import { Footer } from "@/components/marketing/Footer";
 import { JsonLd } from "@/components/marketing/JsonLd";
 import { Nav } from "@/components/marketing/Nav";
+import { ServiceWorker } from "@/components/marketing/ServiceWorker";
 import { getIndustries } from "@/lib/content/industries";
 import { organizationLd, websiteLd } from "@/lib/content/site";
 import { getDictionary, isLocale, locales, localeMeta, type Locale } from "@/lib/i18n";
@@ -73,6 +74,7 @@ export default async function MarketingLayout({ children, params }: { children: 
         </header>
         <main id="main">{children}</main>
         <Footer locale={locale} />
+        <ServiceWorker />
         <JsonLd data={[organizationLd(locale), websiteLd(locale)]} />
       </div>
     </RootDocument>

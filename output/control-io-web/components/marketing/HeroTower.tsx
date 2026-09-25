@@ -24,13 +24,29 @@ function hasWebGL() {
 export function HeroTower({ className, label, exploreLabel = "Explore the model" }: { className?: string; label: string; exploreLabel?: string }) {
   const [webgl, setWebgl] = useState(false);
   const [ready, setReady] = useState(false);
-  useEffect(() => setWebgl(hasWebGL()), []);
+  // The poster is the first paint; the 3D model (a few MB) starts once the page is idle so it never
+  // competes with the text, fonts and poster for bandwidth.
+  useEffect(() => {
+    if (!hasWebGL()) return;
+    let idle = 0;
+    const start = () => {
+      const ric = (window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+      idle = ric ? ric(() => setWebgl(true), { timeout: 2500 }) : window.setTimeout(() => setWebgl(true), 600);
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+    return () => {
+      window.removeEventListener("load", start);
+      (window as Window & { cancelIdleCallback?: (h: number) => void }).cancelIdleCallback?.(idle);
+      window.clearTimeout(idle);
+    };
+  }, []);
   const onLoaded = useCallback(() => setTimeout(() => setReady(true), 250), []);
   return (
     <div className={className}>
       <div className="relative size-full" role="img" aria-label={label}>
         <Image
-          src="/samples/tower-m8-poster.png"
+          src="/samples/tower-m8-poster.webp"
           alt=""
           width={514}
           height={826}

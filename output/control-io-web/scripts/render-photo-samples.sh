@@ -14,12 +14,10 @@ for st in "${stages[@]}"; do
   npx tsx scripts/imagery/projectors.ts "$st"
   blender -b -P scripts/blender/project_photos.py -- --glb "data/plates/tower-$st.raw.glb" --proj "data/projectors/$st" \
     --common data/projectors/common --out "data/plates/tower-$st.photo.raw.glb"
-  npx --yes @gltf-transform/cli optimize "data/plates/tower-$st.photo.raw.glb" "public/samples/tower-$st.glb" \
-    --compress meshopt --texture-compress webp --texture-size 2048 \
-    --join false --flatten false --palette false --instance false --simplify false  # keep Slab_* nodes for lib/server/glb.ts
 done
+scripts/optimize-glb.sh  # web GLBs: slim textures, meshopt, Slab_* names kept
 if printf '%s\n' "${stages[@]}" | grep -qx m8; then
   blender -b -P scripts/blender/render_poster.py -- --glb data/plates/tower-m8.photo.raw.glb --out data/plates/poster-m8.png --samples 48
-  python3 scripts/blender/trim_poster.py data/plates/poster-m8.png public/samples/tower-m8-poster.png ../control-io-mobile/assets/images/tower-poster.png
+  python3 scripts/blender/trim_poster.py data/plates/poster-m8.png public/samples/tower-m8-poster.webp ../control-io-mobile/assets/images/tower-poster.png
 fi
 npx vitest run lib/server/glb.test.ts

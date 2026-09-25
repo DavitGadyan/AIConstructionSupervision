@@ -58,7 +58,7 @@ function useReducedMotion() {
 }
 
 /**
- * Approximate projection of GLB coordinates onto tower-m8-poster.png (camera
+ * Approximate projection of GLB coordinates onto tower-m8-poster.webp (camera
  * at +x/+z, measured off the render). Good to a storey or so - it only
  * serves the no-WebGL fallback.
  */
@@ -379,7 +379,7 @@ export function DefectExplorer({ locale = "en", t }: { locale?: Locale; t: Explo
               {/* Poster: placeholder while loading, and the whole view without WebGL */}
               <div className={cx("absolute inset-0 transition-opacity duration-500", showCanvas && loaded ? "pointer-events-none opacity-0" : "opacity-100")}>
                 <div className="relative mx-auto h-[92%] translate-y-[4%]" style={{ aspectRatio: "514 / 826" }}>
-                  <Image src="/samples/tower-m8-poster.png" alt="" fill sizes="(min-width:1024px) 420px, 60vw" className={cx("object-contain", webgl !== false && "opacity-70")} />
+                  <Image src="/samples/tower-m8-poster.webp" alt="" fill sizes="(min-width:1024px) 420px, 60vw" className={cx("object-contain", webgl !== false && "opacity-70")} />
                   {webgl === false &&
                     visible.map((i) => {
                       const p = posterPoint(i.position);

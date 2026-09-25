@@ -14,7 +14,13 @@ const server = {
 const staticSite = {
   output: "export",
   trailingSlash: true,
-  images: { unoptimized: true },
+  // no optimizer on Pages: pre-built WebP variants (scripts/image-variants.mjs) picked by lib/imageLoader.ts
+  images: {
+    loader: "custom",
+    loaderFile: "./lib/imageLoader.ts",
+    deviceSizes: [640, 960, 1280, 1920],
+    imageSizes: [96, 160, 256, 384],
+  },
   poweredByHeader: false,
 };
 

@@ -30,6 +30,7 @@ export function FlightExplainer({ t }: { t: T }) {
   const [webgl, setWebgl] = useState<boolean | null>(null);
   const [reduced, setReduced] = useState(false);
   const [inView, setInView] = useState(false);
+  const [near, setNear] = useState(false); // mount the scene (and fetch the model) only once the reader gets close
   const stage = useRef<HTMLDivElement>(null);
   const items = useRef<(HTMLLIElement | null)[]>([]);
 
@@ -48,7 +49,10 @@ export function FlightExplainer({ t }: { t: T }) {
       { rootMargin: window.matchMedia("(min-width: 1024px)").matches ? "-45% 0px -45% 0px" : "-62% 0px -28% 0px" },
     );
     items.current.forEach((el) => el && io.observe(el));
-    const vis = new IntersectionObserver(([e]) => setInView(e.isIntersecting), { rootMargin: "200px 0px" });
+    const vis = new IntersectionObserver(([e]) => {
+      setInView(e.isIntersecting);
+      if (e.isIntersecting) setNear(true);
+    }, { rootMargin: "150px 0px" });
     if (stage.current) vis.observe(stage.current);
     return () => {
       io.disconnect();
@@ -59,7 +63,7 @@ export function FlightExplainer({ t }: { t: T }) {
   return (
     <div className="grid gap-6 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
       <div ref={stage} className="sticky top-2 z-10 h-[38vh] min-h-[260px] overflow-hidden rounded-[22px] bg-ground lg:top-6 lg:h-[calc(100vh-48px)] lg:max-h-[760px]">
-        {webgl ? (
+        {webgl && near ? (
           <FlightScene
             src={PHOTOREAL_M8}
             step={step}
@@ -68,9 +72,9 @@ export function FlightExplainer({ t }: { t: T }) {
             label={t.canvasLabel}
             measureLabels={{ built: t.measureBuilt, planned: t.measurePlanned }}
           />
-        ) : (
+        ) : webgl === false ? (
           <Image src="/images/marketing/drone-scan.webp" alt={t.imageAlt} fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" />
-        )}
+        ) : null}
         <p className="pointer-events-none absolute left-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[13px] font-medium text-white">
           {t.steps[step].title}
         </p>

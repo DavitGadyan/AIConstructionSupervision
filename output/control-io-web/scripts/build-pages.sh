@@ -25,6 +25,7 @@ rm -rf out && cp -R "$TMP/out" out
 cp -R out/en/. out/ && rm -rf out/en
 # GitHub Pages serves 404.html for unknown paths; use the localized English 404 page if Next made one.
 [ -f out/404/index.html ] && cp out/404/index.html out/404.html
+node scripts/image-variants.mjs out
 touch out/.nojekyll
 [ -n "$DOMAIN" ] && echo "$DOMAIN" > out/CNAME
 echo "static site in $ROOT/out ($(du -sh out | cut -f1))"
